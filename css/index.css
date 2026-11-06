@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-image: url("../images/bg_page.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.box_login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-height: 70vh;
+    max-width: 100vh;
+    min-width: 50vw;
+    max-width: 80vw;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+h1{
+    font-size: 60px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+#msgErr,#msgSuccess{
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+
+#msgErr{
+    background-color: #EFCAC9;
+    color: #ff0008;
+}
+
+#msgSuccess{
+    background-color: #c9efcb;
+    color: #00ff08;
+}
+
+form{
+    display: grid;
+    place-items: center;
+    margin-top: 10px;
+}
+
+form input,form select{
+    width: 80%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+form input{
+    border-bottom: 1px solid #fff;
+    padding-bottom: 2px;
+}
+
+form input::placeholder{
+    color:rgb(185, 188, 189)
+}
+
+form select{
+    border: 1px solid #fff;
+    border-radius: 3px;
+    text-align: center;
+}
+
+form select option{
+    color: #000
+}
+
+form button{
+    color: #fff;
+    font-size: 30px;
+    outline: none;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: 0.5s;
+    margin: 15px 0px;
+}
+
+form button:hover{
+    cursor: pointer;
+    background-color: #0069F1;
+    border: none;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 8px 2px #3d8aef;
+}
+
+.links{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.links a{
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    transition: 0.5s;
+}
+
+.links a:hover{
+    text-decoration: underline;
+    color: rgb(21, 175, 236);
+}
+
+
+
+
+
+
