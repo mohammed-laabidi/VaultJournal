@@ -19,9 +19,8 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     min-height: 70vh;
-    max-width: 100vh;
-    min-width: 50vw;
-    max-width: 80vw;
+    width: 90%;
+    max-width: 600px;
     background-color: rgba(255,255,255,0.1);
     backdrop-filter: blur(5px);
     border: 1px solid #fff;
@@ -30,14 +29,15 @@ body{
     flex-direction: column;
     justify-content:space-between;
     align-items: center;
-    padding: 10px 0px;
+    padding: 20px 10px;
 }
 
 h1{
-    font-size: 60px;
+    font-size: clamp(30px, 8vw, 60px);
     color: #fff;
     letter-spacing: 1px;
     text-transform: capitalize;
+    text-align: center;
 }
 
 #msgErr,#msgSuccess{
@@ -64,11 +64,12 @@ form{
 
 form input,form select{
     width: 80%;
+    max-width: 400px;
     background-color: transparent;
     outline: none;
     border: none;
     color: #fff;
-    font-size: 30px;
+    font-size: clamp(20px, 5vw, 30px);
     margin: 10px 0px;
 }
 
@@ -93,7 +94,7 @@ form select option{
 
 form button{
     color: #fff;
-    font-size: 30px;
+    font-size: clamp(20px, 5vw, 30px);
     outline: none;
     padding: 5px 20px;
     border-radius: 20px;
@@ -120,7 +121,7 @@ form button:hover{
 }
 
 .links a{
-    font-size: 30px;
+    font-size: clamp(16px, 4vw, 30px);
     color: #fff;
     text-decoration: none;
     letter-spacing: 1px;
@@ -133,8 +134,17 @@ form button:hover{
     color: rgb(21, 175, 236);
 }
 
-
-
-
-
-
+@media (max-width: 600px) {
+    .box_login {
+        width: 95%;
+        padding: 30px 10px;
+    }
+    .links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .links a {
+        font-size: 16px;
+    }
+}

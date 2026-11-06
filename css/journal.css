@@ -17,18 +17,20 @@ header{
     align-items: center;
     justify-content: space-between;
     margin: 20px auto;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 header h1{
     color: #2225f5;
-    font-size: 45px;
+    font-size: clamp(24px, 5vw, 45px);
     text-decoration: underline;
 }
 
 button{
     background-color: #2225f5;
     color: #fff;
-    font-size: 22px;
+    font-size: clamp(16px, 3vw, 22px);
     border: none;
     outline: none;
     padding: 5px 10px;
@@ -44,8 +46,9 @@ button:hover{
 }
 
 .container{
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
     background-color: #f5f7fa;
     margin: auto;
     display: flex;
@@ -57,18 +60,23 @@ button:hover{
 }
 
 input,textarea{
-    font-size: 22px;
+    font-size: clamp(16px, 4vw, 22px);
     padding: 5px 10px;
     outline: none;
 }
 
 input{
     border-radius: 5px;
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
 }
 
 #box_search{
    margin: 0px auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 5px;
 }
 
 #box_search *{
@@ -83,9 +91,10 @@ input{
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(4,auto);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: 90px;
     margin: 20px 0px;
+    gap: 10px;
 }
 
 .iconDelete{
@@ -98,8 +107,8 @@ input{
 
 .entry{
     height: fit-content;
-    padding: 8px 0px;
-    margin: 0px 8px;
+    padding: 8px 10px;
+    margin: 0;
     position: relative;
     background-color: #025ebb;
     color: #fff;
@@ -128,13 +137,16 @@ input{
     left: 50%;
     transform: translate(-50%,-50%) scale(0);
     background-color: #025ebb;
-    width: 60%;
-    height: 75%;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    max-height: 85vh;
     border-radius: 8px;
     box-shadow: 15px 15px 20px #000;
     display: flex;
     flex-direction: column;
     padding: 15px 30px;
+    z-index: 100;
 }
 
 @keyframes scale {
@@ -168,18 +180,32 @@ input{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 40px;
+    font-size: clamp(20px, 5vw, 40px);
     color: gray;
     letter-spacing: 3px;
+    text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+    #box_search {
+        flex-direction: column;
+        align-items: center;
+    }
+    #box_newEntry {
+        padding: 15px;
+    }
+    #box_newEntry #box_btns {
+        position: static;
+        margin-top: 20px;
+        justify-content: center;
+        width: 100%;
+    }
+    #description {
+        top: 10px;
+        height: 50%;
+    }
+}
